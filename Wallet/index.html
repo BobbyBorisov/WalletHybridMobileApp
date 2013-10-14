@@ -10,10 +10,13 @@
         <script src="scripts/lib/http-requester.js" type="text/javascript"></script>
         <script src="scripts/lib/rsvp.js" type="text/javascript"></script>
         <script src="scripts/lib/everlive.all.min.js"></script>
+        <script src="scripts/utilities/camera.js" type="text/javascript"></script>
+        <script src="scripts/utilities/geolocation.js" type="text/javascript"></script>
         <script src="scripts/app/identity-provider.js"></script>
         <script src="scripts/app/data/data.js" type="text/javascript"></script>
         <script src="scripts/app/viewModels/expensesViewModel.js" type="text/javascript"></script>
-       <!-- <script src="scripts/app/viewModels/singleExpenseViewModel.js" type="text/javascript"></script>-->
+        <script src="scripts/app/viewModels/singleExpenseViewModel.js" type="text/javascript"></script>
+        <script src="scripts/app/viewModels/addExpense.js" type="text/javascript"></script>
         <script src="scripts/app/main.js" type="text/javascript"></script>
         
         
@@ -37,11 +40,19 @@
             <div data-role="tabstrip">
                 <a href="#home-view" data-icon="home">Home</a>
                 <a href="views/expenses.html" data-icon="globe">Expenses</a>
-                <a href="views/add-place.html" data-icon="add">Add Place</a>
+                <a href="views/addExpense.html" data-icon="add">Add Expense</a>
+                <a href="views/addFunds.html" data-icon="add">Add Funds</a>
             </div>
         </footer>
     </div>
-
-    
+        
+    <script id="place-template" type="text/x-kendo-template">
+        <div id="place-item">
+            <div class="place-template-info-container" data-bind="events: {click: selectPlace}">
+                <span class="place-template-title">#:name#</span>
+                <span class="expense-template-price-container">#:price#</span>
+            </div>
+        </div>
+    </script>
     </body>
 </html>

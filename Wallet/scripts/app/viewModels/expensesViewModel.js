@@ -1,35 +1,34 @@
 var app = app || {};
+app.viewModels = app.viewModels || {};
 
-app.viewModels = (function(){
-    var getExpenses = function () {
+(function (a) {
+    function getAllExpenses() {
+        app.data.expenses.getExpenses()
+        .then(function (data) {
             
+            viewModel.set("expenses", data.Result);
+            console.log(data);
+        }, function (error) {
+            alert(error);
+        });
+    }
 
-            app.data.expenses.getExpenses()
-            .then(function (result) {
-                console.log(result);
-                expensesViewModel.set("expenses", result);
-            },
-            function (errorData) {
-                console.log(errorData);
-            });
-        };
-    
-    var expensesViewModel = kendo.observable({
+    function selectPlace(param) {
+        app.viewModels.singleExpense.loadExpenseLocation(param.data);
+    }
+
+    var viewModel = kendo.observable({
         expenses: [],
-        category: "football", // TODO : empty string
-        
-        goToExpenses: function (ev) {
-            var id = $(ev.delegateTarget).data("id");
-            betMania.router.navigate("/match/" + id);
-        },
-        init: function(e){
-            kendo.bind(e.view.element,expensesViewModel);
-            console.log(expensesViewModel);
-            getExpenses();
-        }
+        kilometers: "",
+        selectPlace: selectPlace,
     });
-    
-    return {
-        expensesViewModel: expensesViewModel
+
+    function init(e) {
+        kendo.bind(e.view.element, viewModel);
+        getAllExpenses();
+    }
+
+    a.expenses = {
+        init: init
     };
-}());
+}(app.viewModels));

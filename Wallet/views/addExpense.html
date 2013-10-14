@@ -1,0 +1,20 @@
+<div data-role="view" id="add-place-view" data-id="add-place-view"
+    data-layout="main-layout" data-title="Add Expense"
+    data-show="app.viewModels.addExpense.init">
+    <div data-role="scroller">
+        <div id="add-place-container">
+            <label for="add-place-title">Name</label>
+            <input type="text" id="add-place-title" data-bind="value: expense.name" /><br/>
+            <label for="add-place-price">Price</label>
+            <input type="text" id="add-place-title" data-bind="value: expense.price" /><br/>
+            <label for="add-place-title">Category</label>
+            <input type="text" id="add-place-title" data-bind="value: expense.categoryName" /><br/>
+            <label>Picture</label>
+            <img data-bind="attr: { src: expense.pictureUrl }" id="add-place-picture" /><br/>
+            <button data-role="button" data-bind="events: { click: takePicture }"
+                id="add-place-button-picture">Take Picture</button>
+            <button data-role="button" data-bind="events: { click: addExpense }"
+                id="add-place-button-add">Add Expense</button>
+        </div>
+    </div>
+</div>

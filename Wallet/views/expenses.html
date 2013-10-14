@@ -1,15 +1,5 @@
 <div data-role="view" id="all-places-view" data-id="all-places-view"
     data-layout="main-layout" data-title="All Expenses"
-    data-show="app.viewModels.expensesViewModel.init">
-    <div data-role="scroller">
-        <ul data-role="listview" data-bind="source: expenses" data-template="place-template"></ul>
-    </div>
+    data-show="app.viewModels.expenses.init">
+                <ul data-role="listview" data-bind="source: expenses" data-style="inset" data-template="place-template"></ul>
 </div>
-
-<script id="place-template" type="text/x-kendo-template">
-            <div class="place-template">
-            <div class="place-template-info-container">
-                <h2 class="place-template-title">xa</h2>
-            </div>
-            </div>
-    </script>
