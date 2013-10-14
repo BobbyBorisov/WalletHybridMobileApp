@@ -4,6 +4,7 @@
 
     document.addEventListener("deviceready", function () {
         app.application = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout" });
+        localStorage.setItem("balance",100);
     }, false);
     
     document.addEventListener("offline", function () {

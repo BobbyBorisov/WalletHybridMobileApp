@@ -13,14 +13,14 @@ app.viewModels = app.viewModels || {};
         });
     }
 
-    function selectPlace(param) {
+    function selectExpense(param) {
         app.viewModels.singleExpense.loadExpenseLocation(param.data);
     }
 
     var viewModel = kendo.observable({
         expenses: [],
         kilometers: "",
-        selectPlace: selectPlace,
+        selectExpense: selectExpense,
     });
 
     function init(e) {

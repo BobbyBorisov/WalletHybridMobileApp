@@ -2,11 +2,12 @@
     data-layout="main-layout" data-title="Add Expense"
     data-show="app.viewModels.addFunds.init">
     <div data-role="scroller">
-        <div id="add-place-container">
-            <label for="add-place-title">Amount</label>
-            <input type="text" id="add-place-title" data-bind="value: expense.amount" /><br/>
-            <button data-role="button" data-bind="events: { click: addExpense }"
-                id="add-place-button-add">Add funds</button>
+        <div id="add-expense-container">
+            <span data-bind="value: fund.balance"></span>
+            <label for="add-expense-title">Amount</label>
+            <input type="text" id="add-expense-amount" data-bind="value: fund.amount" /><br/>
+            <button data-role="button" data-bind="events: { click: addFunds }"
+                id="add-expense-button-add">Add funds</button>
         </div>
     </div>
 </div>

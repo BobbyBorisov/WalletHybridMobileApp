@@ -1,4 +1,4 @@
-#place-item {
+#expense-item {
     clear: both;
     margin: auto;
     float: left;
@@ -16,7 +16,7 @@
    text-align:right;
 }
 
-#place-details-picture {
+#expense-details-picture {
     width: 200px;
     height: 150px;
     margin-left: 15px;
